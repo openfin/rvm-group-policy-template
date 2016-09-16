@@ -1,0 +1,185 @@
+CLASS MACHINE
+	CATEGORY !!Product_Name
+		KEYNAME "Software\Microsoft\Windows\CurrentVersion\Policies\OpenFin\RVM\Settings"
+
+		POLICY !!NoUI_Policy			
+			EXPLAIN !!NoUI_Explain
+			VALUENAME "noUI"
+			VALUEON NUMERIC 1
+        	VALUEOFF NUMERIC 0			
+		END POLICY
+
+		POLICY !!DisableAutoUpdates_Policy
+			EXPLAIN !!DisableAutoUpdates_Explain
+			VALUENAME "disableAutoUpdates"
+			VALUEON NUMERIC 1
+        	VALUEOFF NUMERIC 0			
+		END POLICY
+
+		POLICY !!CleanUnusedRuntimes_Policy
+			EXPLAIN !!CleanUnusedRuntimes_Explain
+			VALUENAME "cleanUnusedRuntimes"
+			VALUEON NUMERIC 1
+        	VALUEOFF NUMERIC 0			
+		END POLICY
+
+		POLICY !!DisableShortcutCreation_Policy		
+			EXPLAIN !!DisableShortcutCreation_Explain
+			VALUENAME "disableShortcutCreation"
+			VALUEON NUMERIC 1
+        	VALUEOFF NUMERIC 0			
+		END POLICY
+
+		POLICY !!RuntimeArgs_Policy
+			KEYNAME "Software\Microsoft\Windows\CurrentVersion\Policies\OpenFin\RVM"
+			EXPLAIN !!RuntimeArgs_Explain
+			PART !!RuntimeArgs_Part  EDITTEXT
+          		VALUENAME "runtimeArgs"          		
+	       	END PART
+		END POLICY
+
+		CATEGORY !!Network_Settings
+			KEYNAME "Software\Microsoft\Windows\CurrentVersion\Policies\OpenFin\RVM\Settings\Network"
+
+			POLICY !!ReadTimeout_Policy				
+				EXPLAIN !!ReadTimeout_Explain
+				PART !!ReadTimeout_Part  NUMERIC
+	          		VALUENAME "readTimeout"
+	          		MIN 0 MAX 600000         		
+		       	END PART
+			END POLICY
+
+			POLICY !!SendTimeout_Policy				
+				EXPLAIN !!SendTimeout_Explain
+				PART !!SendTimeout_Part  NUMERIC
+	          		VALUENAME "sendTimeout"
+	          		MIN 0 MAX 600000
+		       	END PART
+			END POLICY
+
+			POLICY !!ReceiveTimeout_Policy				
+				EXPLAIN !!ReceiveTimeout_Explain
+				PART !!ReceiveTimeout_Part  NUMERIC
+	          		VALUENAME "receiveTimeout"
+	          		MIN 0 MAX 600000
+		       	END PART
+			END POLICY
+
+			POLICY !!ConnectTimeout_Policy				
+				EXPLAIN !!ConnectTimeout_Explain
+				PART !!ConnectTimeout_Part  NUMERIC
+	          		VALUENAME "connectTimeout"
+	          		MIN 0 MAX 600000
+		       	END PART
+			END POLICY
+
+		END CATEGORY
+
+	END CATEGORY
+
+CLASS USER
+	CATEGORY !!Product_Name
+		KEYNAME "Software\Microsoft\Windows\CurrentVersion\Policies\OpenFin\RVM\Settings"
+
+		POLICY !!NoUI_Policy			
+			EXPLAIN !!NoUI_Explain
+			VALUENAME "noUI"
+			VALUEON NUMERIC 1
+        	VALUEOFF NUMERIC 0			
+		END POLICY
+
+		POLICY !!DisableAutoUpdates_Policy
+			EXPLAIN !!DisableAutoUpdates_Explain
+			VALUENAME "disableAutoUpdates"
+			VALUEON NUMERIC 1
+        	VALUEOFF NUMERIC 0			
+		END POLICY
+
+		POLICY !!CleanUnusedRuntimes_Policy
+			EXPLAIN !!CleanUnusedRuntimes_Explain
+			VALUENAME "cleanUnusedRuntimes"
+			VALUEON NUMERIC 1
+        	VALUEOFF NUMERIC 0			
+		END POLICY
+
+		POLICY !!DisableShortcutCreation_Policy		
+			EXPLAIN !!DisableShortcutCreation_Explain
+			VALUENAME "disableShortcutCreation"
+			VALUEON NUMERIC 1
+        	VALUEOFF NUMERIC 0			
+		END POLICY
+
+		POLICY !!RuntimeArgs_Policy
+			KEYNAME "Software\Microsoft\Windows\CurrentVersion\Policies\OpenFin\RVM"
+			EXPLAIN !!RuntimeArgs_Explain
+			PART !!RuntimeArgs_Part  EDITTEXT
+          		VALUENAME "runtimeArgs"          		
+	       	END PART
+		END POLICY
+
+		CATEGORY !!Network_Settings
+			KEYNAME "Software\Microsoft\Windows\CurrentVersion\Policies\OpenFin\RVM\Settings\Network"
+
+			POLICY !!ReadTimeout_Policy				
+				EXPLAIN !!ReadTimeout_Explain
+				PART !!ReadTimeout_Part  NUMERIC
+	          		VALUENAME "readTimeout"
+	          		MIN 0 MAX 600000         		
+		       	END PART
+			END POLICY
+
+			POLICY !!SendTimeout_Policy				
+				EXPLAIN !!SendTimeout_Explain
+				PART !!SendTimeout_Part  NUMERIC
+	          		VALUENAME "sendTimeout"
+	          		MIN 0 MAX 600000
+		       	END PART
+			END POLICY
+
+			POLICY !!ReceiveTimeout_Policy				
+				EXPLAIN !!ReceiveTimeout_Explain
+				PART !!ReceiveTimeout_Part  NUMERIC
+	          		VALUENAME "receiveTimeout"
+	          		MIN 0 MAX 600000
+		       	END PART
+			END POLICY
+
+			POLICY !!ConnectTimeout_Policy				
+				EXPLAIN !!ConnectTimeout_Explain
+				PART !!ConnectTimeout_Part  NUMERIC
+	          		VALUENAME "connectTimeout"
+	          		MIN 0 MAX 600000
+		       	END PART
+			END POLICY
+
+		END CATEGORY
+
+	END CATEGORY
+
+
+[strings]
+Product_Name="OpenFinRVM"
+NoUI_Policy="Disable UI"
+NoUI_Explain="Disables UI for the RVM. Progress and error dialogs will not be shown. Disabled by default."
+DisableAutoUpdates_Policy="Disable RVM Auto Updates"
+DisableAutoUpdates_Explain="Prevents the RVM from auto updating. Disabled by default."
+CleanUnusedRuntimes_Policy="Clean unused runtime version"
+CleanUnusedRuntimes_Explain="By default, the RVM will delete any runtime version that is no longer used by any of the installed apps. Setting this flag to 0 will prevent it."
+DisableShortcutCreation_Policy="Disable shortcut creation"
+DisableShortcutCreation_Explain="Enabling this option will prevent the RVM from creating any shortcut for all apps. Disabled by default."
+RuntimeArgs_Policy="Runtime Arguments"
+RuntimeArgs_Explain="The given runtime arguments will be used for all runtime launches and will override all existing runtime arguments specified in the app-config."
+RuntimeArgs_Part="Runtime Arguments"
+Network_Settings="Network Settings"
+ReadTimeout_Policy="HTTP Read Timeout"
+ReadTimeout_Explain="Sets the read timeout for all RVM HTTP requests. Default is 30 seconds (30000)"
+ReadTimeout_Part="HTTP Read Timeout (msec)"
+SendTimeout_Policy="HTTP Send Timeout"
+SendTimeout_Explain="Sets the send timeout for all RVM HTTP requests. Default is 30 seconds (30000)"
+SendTimeout_Part="HTTP Send Timeout (msec)"
+ReceiveTimeout_Policy="HTTP Receive Timeout"
+ReceiveTimeout_Explain="Sets the receive timeout for all RVM HTTP requests. Default is 30 seconds (30000)"
+ReceiveTimeout_Part="HTTP Receive Timeout (msec)"
+ConnectTimeout_Policy="HTTP Connect Timeout"
+ConnectTimeout_Explain="Sets the connection timeout for all RVM HTTP requests. Default is 30 seconds (30000)""
+ConnectTimeout_Part="HTTP Connect Timeout (msec)"
