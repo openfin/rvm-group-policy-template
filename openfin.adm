@@ -74,6 +74,30 @@ CLASS MACHINE
 			END POLICY
 
 		END CATEGORY
+		CATEGORY !!Deployment_Settings
+			KEYNAME "Software\Microsoft\Windows\CurrentVersion\Policies\OpenFin\RVM\Settings\Deployment"
+
+			POLICY !!RuntimeCacheDir_Policy
+				EXPLAIN !!RuntimeCacheDir_Explain
+				PART !!RuntimeCacheDir_Part  EDITTEXT
+	          		VALUENAME "runtimeCache"
+		       	END PART
+			END POLICY
+
+			POLICY !!RuntimeDir_Policy
+				EXPLAIN !!RuntimeDir_Explain
+				PART !!RuntimeDir_Part  EDITTEXT
+	          		VALUENAME "runtimeDirectory"
+		       	END PART
+			END POLICY
+
+			POLICY !!RVMInstallDirectory_Policy
+				EXPLAIN !!RVMInstallDirectory_Explain
+				PART !!RVMInstallDirectory_Part  EDITTEXT
+	          		VALUENAME "rvmInstallDirectory"
+		       	END PART
+			END POLICY
+		END CATEGORY
 
 	END CATEGORY
 
@@ -153,6 +177,31 @@ CLASS USER
 			END POLICY
 
 		END CATEGORY
+		
+		CATEGORY !!Deployment_Settings
+			KEYNAME "Software\Microsoft\Windows\CurrentVersion\Policies\OpenFin\RVM\Settings\Deployment"
+
+			POLICY !!RuntimeCacheDir_Policy
+				EXPLAIN !!RuntimeCacheDir_Explain
+				PART !!RuntimeCacheDir_Part  EDITTEXT
+	          		VALUENAME "runtimeCache"
+		       	END PART
+			END POLICY
+
+			POLICY !!RuntimeDir_Policy
+				EXPLAIN !!RuntimeDir_Explain
+				PART !!RuntimeDir_Part  EDITTEXT
+	          		VALUENAME "runtimeDirectory"
+		       	END PART
+			END POLICY
+
+			POLICY !!RVMInstallDirectory_Policy
+				EXPLAIN !!RVMInstallDirectory_Explain
+				PART !!RVMInstallDirectory_Part  EDITTEXT
+	          		VALUENAME "rvmInstallDirectory"
+		       	END PART
+			END POLICY
+		END CATEGORY
 
 	END CATEGORY
 
@@ -183,3 +232,13 @@ ReceiveTimeout_Part="HTTP Receive Timeout (msec)"
 ConnectTimeout_Policy="HTTP Connect Timeout"
 ConnectTimeout_Explain="Sets the connection timeout for all RVM HTTP requests. Default is 30 seconds (30000)""
 ConnectTimeout_Part="HTTP Connect Timeout (msec)"
+Deployment_Settings="Deployment Settings"
+RuntimeCacheDir_Policy="Runtime Cache Directory"
+RuntimeCacheDir_Explain="Sets the location to which the runtime will write its cache data (cookies, local storage, etc.)"
+RuntimeCacheDir_Part="Runtime Cache Directory"
+RuntimeDir_Policy="Runtime Directory"
+RuntimeDir_Explain="Sets the location from which the RVM will read\write runtime binaries"
+RuntimeDir_Part="Runtime Directory"
+RVMInstallDirectory_Policy="RVM Install Directory"
+RVMInstallDirectory_Explain="RVM will copy itself and operate from this directory"
+RVMInstallDirectory_Part="RVM Install Directory"
